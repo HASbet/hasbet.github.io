@@ -1644,11 +1644,11 @@ var FaucetTabContent = React.createClass({
       // `data` is { claim_id: Int, amount: Satoshis }
       success: function(data) {
         Dispatcher.sendAction('UPDATE_USER', {
-          balance: worldStore.state.user.balance + data.amount
+          balance: worldStore.state.user.balance + 10
         });
         self.setState({
           faucetState: 'SUCCESSFULLY_CLAIMED',
-          claimAmount: data.amount
+          claimAmount: 10
         });
         // self.props.faucetClaimedAt.update(function() {
         //   return new Date();
