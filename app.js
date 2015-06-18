@@ -1644,11 +1644,11 @@ var FaucetTabContent = React.createClass({
       // `data` is { claim_id: Int, amount: Satoshis }
       success: function(data) {
         Dispatcher.sendAction('UPDATE_USER', {
-          balance: worldStore.state.user.balance + 1000
+          balance: worldStore.state.user.balance + data.amount
         });
         self.setState({
           faucetState: 'SUCCESSFULLY_CLAIMED',
-          claimAmount: 1000
+          claimAmount: data.amount
         });
         // self.props.faucetClaimedAt.update(function() {
         //   return new Date();
@@ -1698,7 +1698,7 @@ var FaucetTabContent = React.createClass({
         null,
         'Successfully claimed ' + this.state.claimAmount/100 + ' bits.' +
           // TODO: What's the real interval?
-          ' You can claim again in 5 minutes.'
+          ' You can claim again in 2 minutes.'
       );
       break;
     case 'ALREADY_CLAIMED':
