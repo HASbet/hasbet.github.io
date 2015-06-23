@@ -1,11 +1,9 @@
 body {
-    margin-top: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
+    margin-top: 0pxpx;
 }
 
 .navbar .navbar-brand {
-    color: #FFFFFF;
+    color: #00CCBF;
 }
 .navbar .brand-name:hover {
     text-decoration: underline;
@@ -15,7 +13,8 @@ body {
 
 .chat-list {
     overflow-y: scroll;
-    height: 220px;
+    height: 215px;
+	width: 300px;
     word-wrap: break-word;
 }
 
