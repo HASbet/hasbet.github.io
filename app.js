@@ -603,6 +603,7 @@ var UserBox = React.createClass({
             {
               type: 'button',
               className: 'btn btn-default navbar-btn btn-xs',
+			  style: {marginRight: '10px'}
               onClick: this._openWithdrawPopup
             },
             'Withdraw'
