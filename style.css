@@ -3,7 +3,7 @@ body {
 }
 
 .navbar .navbar-brand {
-    color: #00CCBF;
+    color: #FFFFFF;
 }
 .navbar .brand-name:hover {
     text-decoration: underline;
@@ -14,7 +14,6 @@ body {
 .chat-list {
     overflow-y: scroll;
     height: 215px;
-	width: 300px;
     word-wrap: break-word;
 }
 
