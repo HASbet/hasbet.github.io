@@ -594,25 +594,23 @@ var UserBox = React.createClass({
             className: 'navbar-text',
             style: {marginRight: '5px'}
           },
-          worldStore.state.user.balance / 100000000 + ' sathosi'
+          worldStore.state.user.balance / 100 + ' bits'
         ),
         // Deposit/Withdraw popup buttons
-        el.div(
-          {className: 'btn-group navbar-left btn-group-xs'},
-          el.button(
-            {
-              type: 'button',
-              className: 'navbar-btn btn btn-default' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
-			  onClick: this._openDepositPopup
-            },
+        el.button(
+          {
+            type: 'button',
+            className: 'navbar-btn btn btn-default' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
+			onClick: this._openDepositPopup
+          },
             'Deposit'
-          ),
-          el.button(
-            {
-              type: 'button',
-              className: 'navbar-btn btn btn-default',
-              onClick: this._openWithdrawPopup
-            },
+        ),
+        el.button(
+          {
+            type: 'button',
+            className: 'navbar-btn btn btn-default',
+            onClick: this._openWithdrawPopup
+          },
             'Withdraw'
           )
         ),
@@ -1136,7 +1134,7 @@ var BetBoxWager = React.createClass({
     // If user is logged in, use their balance as max wager
     var balanceBits;
     if (worldStore.state.user) {
-      balanceBits = Math.floor(worldStore.state.user.balance / 100000000);
+      balanceBits = Math.floor(worldStore.state.user.balance / 100);
     } else {
       balanceBits = 420000;
     }
@@ -1572,8 +1570,8 @@ var MyBetsTabContent = React.createClass({
               el.td(
                 {style: {color: bet.profit > 0 ? 'green' : 'red'}},
                 bet.profit > 0 ?
-                  '+' + bet.profit/100000000 :
-                  bet.profit/100000000
+                  '+' + bet.profit/100 :
+                  bet.profit/100
               ),
               // outcome
               el.td(
@@ -1696,7 +1694,7 @@ var FaucetTabContent = React.createClass({
     case 'SUCCESSFULLY_CLAIMED':
       innerNode = el.div(
         null,
-        'Successfully claimed ' + this.state.claimAmount/100000000 + ' sathosi.' +
+        'Successfully claimed ' + this.state.claimAmount/100 + ' bits.' +
           // TODO: What's the real interval?
           ' You can claim again in 2 minutes.'
       );
