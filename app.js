@@ -583,11 +583,19 @@ var UserBox = React.createClass({
     if (worldStore.state.isLoading) {
       innerNode = el.p(
         {className: 'navbar-text'},
-        'Loading...'
+        'Loading.......'
       );
     } else if (worldStore.state.user) {
       innerNode = el.div(
         null,
+		// Balance
+        el.span(
+          {
+            className: 'navbar-text',
+            style: {marginRight: '5px'}
+          },
+          worldStore.state.user.balance / 100 + ' bits'
+        ),
         // Deposit/Withdraw popup buttons
         el.div(
           {className: 'btn-group navbar-left btn-group-xs'},
@@ -607,14 +615,6 @@ var UserBox = React.createClass({
             },
             'Withdraw'
           )
-        ),
-        // Balance
-        el.span(
-          {
-            className: 'navbar-text',
-            style: {marginRight: '5px'}
-          },
-          worldStore.state.user.balance / 100 + ' bits'
         ),
         // Refresh button
         el.button(
@@ -664,7 +664,7 @@ var UserBox = React.createClass({
     }
 
     return el.div(
-      {className: 'navbar-left'},
+      {className: 'navbar-right'},
       innerNode
     );
   }
