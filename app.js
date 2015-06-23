@@ -555,8 +555,8 @@ var UserBox = React.createClass({
     var windowUrl = config.mp_browser_uri + '/dialog/withdraw?app_id=' + config.app_id;
     var windowName = 'manage-auth';
     var windowOpts = [
-      'width=420',
-      'height=350',
+      'width=250',
+      'height=300',
       'left=100',
       'top=100'
     ].join(',');
