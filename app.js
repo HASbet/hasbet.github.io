@@ -594,8 +594,7 @@ var UserBox = React.createClass({
           el.button(
             {
               type: 'button',
-              className: 'btn navbar-btn btn-xs ' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
-              style: {width: '10px'}
+              className: 'navbar-btn btn btn-default' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
 			  onClick: this._openDepositPopup
             },
             'Deposit'
@@ -603,8 +602,7 @@ var UserBox = React.createClass({
           el.button(
             {
               type: 'button',
-              className: 'btn btn-default navbar-btn btn-xs',
-			  style: {width: '10px'}
+              className: 'navbar-btn btn btn-default',
               onClick: this._openWithdrawPopup
             },
             'Withdraw'
@@ -636,7 +634,7 @@ var UserBox = React.createClass({
         // Logged in as...
         el.span(
           {className: 'navbar-text'},
-          'Logged in as ',
+          'My name is ',
           el.code(null, worldStore.state.user.uname)
         ),
         // Logout button
@@ -666,7 +664,7 @@ var UserBox = React.createClass({
     }
 
     return el.div(
-      {className: 'navbar-right'},
+      {className: 'navbar-left'},
       innerNode
     );
   }
