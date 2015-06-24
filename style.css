@@ -9,10 +9,12 @@ body {
 
 .navbar .navbar-brand {
     color: #00CCBF;
+	background-image: url("https://bitcoin.org/img/icons/opengraph.png")
 }
 
 .navbar .brand-name:hover {
     text-decoration: underline;
+	float: left;
 }
 
 /* ChatBox */
@@ -21,7 +23,6 @@ body {
     overflow-y: scroll;
     height: 215px;
     word-wrap: break-word;
-	background-color: blue;
 }
 
 .chat-list li {
