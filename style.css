@@ -1,17 +1,19 @@
 html {
 	background-color: #09B55F;
 }
+
 body {
     margin-top: 10px;
 	margin-left: 10px;
 	margin-right: 10px;
+	margin-bottom: 10px;
 	padding: 10px;
 	border: 2px solid #E0E0E0;
-	background-image: url("http://asiawisata.com/wp-content/uploads/2014/11/610160_1680_948.jpg")
+	background-image: url("http://oi57.tinypic.com/346tkb4.jpg")
 }
 
 .navbar .navbar-brand {
-    color: #00CCBF;
+    color: #ffffff;
 	font-size: 42px;
 }
 

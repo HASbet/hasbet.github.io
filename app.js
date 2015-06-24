@@ -598,7 +598,7 @@ var UserBox = React.createClass({
         ),
         // Deposit/Withdraw popup buttons
         el.div(
-          {className: 'btn-group navbar-left btn-group-xs'},
+          {className: 'navbar-left'},
           el.button(
             {
               type: 'button',
