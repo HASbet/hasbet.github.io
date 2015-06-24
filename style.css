@@ -1,3 +1,6 @@
+html {
+	background-color: #09B55F;
+}
 body {
     margin-top: 0px;
 	margin-left: 0px;
@@ -5,8 +8,9 @@ body {
 }
 
 .navbar .navbar-brand {
-    color: #FFFFFF;
+    color: #00CCBF;
 }
+
 .navbar .brand-name:hover {
     text-decoration: underline;
 }
