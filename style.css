@@ -30,7 +30,7 @@ body {
 .chat-list li {
     /* Since .focus() is used to scroll to last message item,
        turn off the outline that appears by default */
-    outline: 1px;
+    outline: none;
 }
 
 /* Animation */
