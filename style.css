@@ -21,12 +21,12 @@ body {
     overflow-y: scroll;
     height: 215px;
     word-wrap: break-word;
+	color: blue;
 }
 
 .chat-list li {
     /* Since .focus() is used to scroll to last message item,
        turn off the outline that appears by default */
-    outline: none;
 }
 
 /* Animation */
