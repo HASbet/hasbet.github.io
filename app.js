@@ -602,7 +602,7 @@ var UserBox = React.createClass({
           el.button(
             {
               type: 'button',
-              className: 'navbar-btn btn btn-danger' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
+              className: 'navbar-btn btn btn-default' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
 			  onClick: this._openDepositPopup
             },
             'Deposit'
@@ -610,8 +610,8 @@ var UserBox = React.createClass({
           el.button(
             {
               type: 'button',
-              className: 'navbar-btn btn btn-primary',
-              onClick: this._openWithdrawPopup 
+              className: 'navbar-btn btn btn-default',
+              onClick: this._openWithdrawPopup
             },
             'Withdraw'
           )
@@ -627,7 +627,6 @@ var UserBox = React.createClass({
               paddingLeft: 0,
               paddingRight: 0,
               marginRight: '10px'
-			  marginLeft: '10px'
             }
           },
           el.span({className: 'glyphicon glyphicon-refresh'})
