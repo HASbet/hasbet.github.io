@@ -597,7 +597,9 @@ var UserBox = React.createClass({
           worldStore.state.user.balance / 100 + ' bits'
         ),
         // Deposit/Withdraw popup buttons
-        el.button(
+        el.div(
+          {className: 'btn-group navbar-left btn-group-xs'},
+          el.button(
             {
               type: 'button',
               className: 'navbar-btn btn btn-default' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
@@ -605,7 +607,7 @@ var UserBox = React.createClass({
             },
             'Deposit'
           ),
-        el.button(
+          el.button(
             {
               type: 'button',
               className: 'navbar-btn btn btn-default',
