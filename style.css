@@ -2,9 +2,11 @@ html {
 	background-color: #09B55F;
 }
 body {
-    margin-top: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
+    margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 10px;
+	border: 2px solid #E0E0E0;
 	width: 700px;
 }
 
