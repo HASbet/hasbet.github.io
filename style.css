@@ -11,7 +11,7 @@ body {
 
 .navbar .navbar-brand {
     color: #00CCBF;
-	background-image: url("https://bitcoin.org/img/icons/opengraph.png")
+	font-size: 42px;
 }
 
 .navbar .brand-name:hover {
