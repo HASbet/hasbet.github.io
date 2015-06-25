@@ -596,22 +596,6 @@ var UserBox = React.createClass({
           },
           worldStore.state.user.balance / 100 + ' bits'
         ),
-		 // Refresh button
-        el.button(
-          {
-            className: 'btn btn-link navbar-btn navbar-left ' + (worldStore.state.isRefreshingUser ? ' rotate' : ''),
-            title: 'Refresh Balance',
-            disabled: worldStore.state.isRefreshingUser,
-            onClick: this._onRefreshUser,
-            style: {
-              paddingLeft: 0,
-              paddingRight: 0,
-              marginRight: '10px'
-			  marginLeft: '10px'
-            }
-          },
-          el.span({className: 'glyphicon glyphicon-refresh'})
-        ),
         // Deposit/Withdraw popup buttons
         el.div(
           {className: 'navbar-left'},
@@ -620,10 +604,6 @@ var UserBox = React.createClass({
               type: 'button',
               className: 'navbar-btn btn btn-default' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
 			  onClick: this._openDepositPopup
-			  style: {
-				marginLeft: '10px'
-				marginRight: '10px'
-			  }
             },
             'Deposit'
           ),
@@ -635,6 +615,21 @@ var UserBox = React.createClass({
             },
             'Withdraw'
           )
+        ),
+        // Refresh button
+        el.button(
+          {
+            className: 'btn btn-link navbar-btn navbar-left ' + (worldStore.state.isRefreshingUser ? ' rotate' : ''),
+            title: 'Refresh Balance',
+            disabled: worldStore.state.isRefreshingUser,
+            onClick: this._onRefreshUser,
+            style: {
+              paddingLeft: 0,
+              paddingRight: 0,
+              marginRight: '10px'
+            }
+          },
+          el.span({className: 'glyphicon glyphicon-refresh'})
         ),
         // Logged in as...
         el.span(
