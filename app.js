@@ -594,29 +594,9 @@ var UserBox = React.createClass({
             className: 'navbar-text',
             style: {marginRight: '5px'}
           },
-          worldStore.state.user.balance / 100 + ' bits'
+          worldStore.state.user.balance / 100 + ' Bits'
         ),
-        // Deposit/Withdraw popup buttons
-        el.div(
-          {className: 'navbar-left'},
-          el.button(
-            {
-              type: 'button',
-              className: 'navbar-btn btn btn-default' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
-			  onClick: this._openDepositPopup
-            },
-            'Deposit'
-          ),
-          el.button(
-            {
-              type: 'button',
-              className: 'navbar-btn btn btn-default',
-              onClick: this._openWithdrawPopup
-            },
-            'Withdraw'
-          )
-        ),
-        // Refresh button
+		        // Refresh button
         el.button(
           {
             className: 'btn btn-link navbar-btn navbar-left ' + (worldStore.state.isRefreshingUser ? ' rotate' : ''),
@@ -627,9 +607,30 @@ var UserBox = React.createClass({
               paddingLeft: 0,
               paddingRight: 0,
               marginRight: '10px'
+			  marginLeft: '10px'
             }
           },
           el.span({className: 'glyphicon glyphicon-refresh'})
+        ),
+        // Deposit/Withdraw popup buttons
+        el.div(
+          {className: 'navbar-left'},
+          el.button(
+            {
+              type: 'button',
+              className: 'navbar-btn btn btn-success' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-success'),
+			  onClick: this._openDepositPopup
+            },
+            'Deposit'
+          ),
+          el.button(
+            {
+              type: 'button',
+              className: 'navbar-btn btn btn-danger',
+              onClick: this._openWithdrawPopup
+            },
+            'Withdraw'
+          )
         ),
         // Logged in as...
         el.span(
@@ -642,7 +643,7 @@ var UserBox = React.createClass({
           {
             type: 'button',
             onClick: this._onLogout,
-            className: 'navbar-btn btn btn-default'
+            className: 'navbar-btn btn btn-primary'
           },
           'Logout'
         )
@@ -656,7 +657,7 @@ var UserBox = React.createClass({
             href: config.mp_browser_uri + '/oauth/authorize' +
               '?app_id=' + config.app_id +
               '&redirect_uri=' + config.redirect_uri,
-            className: 'btn btn-default'
+            className: 'btn btn-primary'
           },
           'Login with Moneypot'
         )
