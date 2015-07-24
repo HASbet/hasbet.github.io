@@ -54,7 +54,7 @@ helpers.multiplierToWinProb = function(multiplier) {
   console.assert(typeof multiplier === 'number');
   console.assert(multiplier > 0);
 
-  return 0.99 / multiplier;
+  return 1 / multiplier;
 };
 
 helpers.calcNumber = function(cond, winProb) {
@@ -376,8 +376,8 @@ var betStore = new Store('bet', {
     error: undefined
   },
   multiplier: {
-    str: '1.00',
-    num: 1.00,
+    str: '2.00',
+    num: 2.00,
     error: undefined
   },
   hotkeysEnabled: false
