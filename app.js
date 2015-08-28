@@ -18,8 +18,34 @@ var config = {
   debug: isRunningLocally(),
   // - Set this to true if you want users that come to http:// to be redirected
   //   to https://
-  force_https_redirect: !isRunningLocally()
+  force_https_redirect: !isRunningLocally(),
+  // - Configure the house edge (default is 1%)
+  //   Must be between 0.0 (0%) and 1.0 (100%)
+  house_edge: 0.02
 };
+
+////////////////////////////////////////////////////////////
+// You shouldn't have to edit anything below this line
+////////////////////////////////////////////////////////////
+
+// Validate the configured house edge
+(function() {
+  var errString;
+
+  if (config.house_edge <= 0.0) {
+    errString = 'House edge must be > 0.0 (0%)';
+  } else if (config.house_edge >= 100.0) {
+    errString = 'House edge must be < 1.0 (100%)';
+  }
+
+  if (errString) {
+    alert(errString);
+    throw new Error(errString);
+  }
+
+  // Sanity check: Print house edge
+  console.log('House Edge:', (config.house_edge * 100).toString() + '%');
+})();
 
 ////////////////////////////////////////////////////////////
 // You shouldn't have to edit anything below this line
