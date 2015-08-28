@@ -22,13 +22,12 @@ var config = {
   // - Configure the house edge (default is 1%)
   //   Must be between 0.0 (0%) and 1.0 (100%)
 <<<<<<< HEAD
-  house_edge: 0.02
 =======
-  house_edge: 0.01,
+  house_edge: 0.02,
   chat_buffer_size: 250,
   // - The amount of bets to show on screen in each tab
   bet_buffer_size: 25
->>>>>>> untitled-dice/master
+>>>>>>> hasbet/master
 };
 
 ////////////////////////////////////////////////////////////
