@@ -21,14 +21,10 @@ var config = {
   force_https_redirect: !isRunningLocally(),
   // - Configure the house edge (default is 1%)
   //   Must be between 0.0 (0%) and 1.0 (100%)
-<<<<<<< HEAD
-  house_edge: 0.02
-=======
-  house_edge: 0.01,
+  house_edge: 0.02,
   chat_buffer_size: 250,
   // - The amount of bets to show on screen in each tab
   bet_buffer_size: 25
->>>>>>> untitled-dice/master
 };
 
 ////////////////////////////////////////////////////////////
@@ -55,11 +51,6 @@ var config = {
 })();
 
 ////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-// You shouldn't have to edit anything below this line
-////////////////////////////////////////////////////////////
-=======
->>>>>>> untitled-dice/master
 
 if (config.force_https_redirect && window.location.protocol !== "https:") {
   window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
@@ -703,41 +694,31 @@ var UserBox = React.createClass({
     if (worldStore.state.isLoading) {
       innerNode = el.p(
         {className: 'navbar-text'},
-        'Loading.......'
+        'Loading...'
       );
     } else if (worldStore.state.user) {
       innerNode = el.div(
         null,
-		// Balance
-        el.span(
-          {
-            className: 'navbar-text',
-            style: {marginRight: '5px'}
-          },
-          worldStore.state.user.balance / 100 + ' bits'
-        ),
         // Deposit/Withdraw popup buttons
         el.div(
-          {className: 'navbar-left'},
+          {className: 'btn-group navbar-left btn-group-xs'},
           el.button(
             {
               type: 'button',
-              className: 'navbar-btn btn btn-default' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
-			  onClick: this._openDepositPopup
+              className: 'btn navbar-btn btn-xs ' + (betStore.state.wager.error === 'CANNOT_AFFORD_WAGER' ? 'btn-success' : 'btn-default'),
+              onClick: this._openDepositPopup
             },
             'Deposit'
           ),
           el.button(
             {
               type: 'button',
-              className: 'navbar-btn btn btn-default',
+              className: 'btn btn-default navbar-btn btn-xs',
               onClick: this._openWithdrawPopup
             },
             'Withdraw'
           )
         ),
-<<<<<<< HEAD
-=======
         // Balance
         el.span(
           {
@@ -752,7 +733,6 @@ var UserBox = React.createClass({
              ' + ' + (worldStore.state.user.unconfirmed_balance / 100) + ' bits pending'
            )
         ),
->>>>>>> untitled-dice/master
         // Refresh button
         el.button(
           {
@@ -771,7 +751,7 @@ var UserBox = React.createClass({
         // Logged in as...
         el.span(
           {className: 'navbar-text'},
-          'My name is ',
+          'Logged in as ',
           el.code(null, worldStore.state.user.uname)
         ),
         // Logout button
@@ -1295,7 +1275,7 @@ var BetBoxWager = React.createClass({
     if (worldStore.state.user) {
       balanceBits = Math.floor(worldStore.state.user.balance / 100);
     } else {
-      balanceBits = 420000;
+      balanceBits = 42000;
     }
     Dispatcher.sendAction('UPDATE_WAGER', { str: balanceBits.toString() });
   },
@@ -1475,7 +1455,7 @@ var BetBoxButton = React.createClass({
       // If there's a betbox error, then render button in error state
 
       var errorTranslations = {
-        'CANNOT_AFFORD_WAGER': 'Your balance is too low',
+        'CANNOT_AFFORD_WAGER': 'You cannot afford wager',
         'INVALID_WAGER': 'Invalid wager',
         'INVALID_MULTIPLIER': 'Invalid multiplier',
         'MULTIPLIER_TOO_PRECISE': 'Multiplier too precise',
@@ -1887,7 +1867,7 @@ var FaucetTabContent = React.createClass({
         null,
         'Successfully claimed ' + this.state.claimAmount/100 + ' bits.' +
           // TODO: What's the real interval?
-          ' You can claim again in 2 minutes.'
+          ' You can claim again in 5 minutes.'
       );
       break;
     case 'ALREADY_CLAIMED':
