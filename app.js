@@ -1340,10 +1340,9 @@ var BetBoxWager = React.createClass({
             {
               className: 'btn btn-default btn-md',
               type: 'button',
-              style: style3,
               onClick: this._onMinWager
             },
-            'Min'
+            'Min', worldStore.state.hotkeysEnabled ? el.kbd(null, 'V') : ''
           )
         ),
         el.div(
