@@ -1270,7 +1270,7 @@ var BetBoxWager = React.createClass({
 
   },
   _onMinWager: function() {
-    var n = betStore.state.wager.num / 0;
+    var n = 1;
     Dispatcher.sendAction('UPDATE_WAGER', { str: n.toString() });
   },
   _onMaxWager: function() {
