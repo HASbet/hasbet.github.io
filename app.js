@@ -1269,6 +1269,10 @@ var BetBoxWager = React.createClass({
     Dispatcher.sendAction('UPDATE_WAGER', { str: n.toString() });
 
   },
+  _onMinWager: function() {
+    var n = betStore.state.wager.num / 0;
+    Dispatcher.sendAction('UPDATE_WAGER', { str: n.toString() });
+  },
   _onMaxWager: function() {
     // If user is logged in, use their balance as max wager
     var balanceBits;
@@ -1327,6 +1331,18 @@ var BetBoxWager = React.createClass({
               onClick: this._onDoubleWager
             },
             '2x ', worldStore.state.hotkeysEnabled ? el.kbd(null, 'C') : ''
+          )
+        ),
+        el.div(
+          {className: 'btn-group'},
+          el.button(
+            {
+              className: 'btn btn-default btn-md',
+              type: 'button',
+              style: style3,
+              onClick: this._onMinWager
+            },
+            'Min'
           )
         ),
         el.div(
