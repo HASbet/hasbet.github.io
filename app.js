@@ -2331,7 +2331,7 @@ function onRecaptchaLoad() {
 }
 
 $(document).on('keydown', function(e) {
-  var H = 72, L = 76, C = 67, X = 88, keyCode = e.which;
+  var H = 72, L = 76, C = 67, X = 88, V = 86, keyCode = e.which;
 
   // Bail is hotkeys aren't currently enabled to prevent accidental bets
   if (!worldStore.state.hotkeysEnabled) {
@@ -2361,7 +2361,13 @@ $(document).on('keydown', function(e) {
         num: downWager,
         str: downWager.toString()
       });
-
+      break;
+    case V:  // Decrease wager
+      var minWager = 1;
+      Dispatcher.sendAction('UPDATE_WAGER', {
+        num: minWager,
+        str: minWager.toString()
+      });
       break;
     case L:  // Bet lo
       $('#bet-lo').click();
